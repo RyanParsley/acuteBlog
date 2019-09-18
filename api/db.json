@@ -1,0 +1,14 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "TestTestington"}
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1, "authorId": 3 }
+  ],
+  "users": [
+    { "id": 1, "name": "TestTestington", "image": "https://www.fillmurray.com/200/200"  },
+    { "id": 2, "name": "TestTestofferson", "image": "https://www.fillmurray.com/200/200"  },
+    { "id": 3, "name": "TestMcTester", "image": "https://www.fillmurray.com/200/200"  }
+  ],
+  "profile": { "name": "TestTestington", "id": 1, "image": "https://www.fillmurray.com/200/200" }
+}
