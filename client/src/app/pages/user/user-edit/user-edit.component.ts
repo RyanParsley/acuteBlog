@@ -12,7 +12,7 @@ import { of } from 'rxjs';
 })
 export class UserEditComponent implements OnInit {
   id = -1;
-  user: User = { id: -1, name: '', email: ''};
+  user: User = { id: -1, name: '', email: '', image: ''};
   errors = '';
 
   constructor(

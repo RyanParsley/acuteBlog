@@ -6,9 +6,9 @@
     { "id": 1, "body": "some comment", "postId": 1, "authorId": 3 }
   ],
   "users": [
-    { "id": 1, "name": "TestTestington", "image": "https://www.fillmurray.com/200/200"  },
-    { "id": 2, "name": "TestTestofferson", "image": "https://www.fillmurray.com/200/200"  },
-    { "id": 3, "name": "TestMcTester", "image": "https://www.fillmurray.com/200/200"  }
+    { "id": 1, "name": "TestTestington", "image": "https://placeimg.com/640/480/people/sepia"  },
+    { "id": 2, "name": "TestTestofferson", "image": "https://placeimg.com/640/480/animals/sepia"  },
+    { "id": 3, "name": "TestMcTestersons", "image": "https://placeimg.com/640/480/tech/sepia"  }
   ],
-  "profile": { "name": "TestTestington", "id": 1, "image": "https://www.fillmurray.com/200/200" }
+  "profile": { "name": "TestTestington", "id": 1, "image": "https://placeimg.com/640/480/people/sepia" }
 }

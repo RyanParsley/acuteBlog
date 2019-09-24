@@ -12,7 +12,7 @@ import { User } from '../user';
 export class UserListComponent implements OnInit {
 
   filter = new UserFilter();
-  selectedUser: User = { id: -1, name: '', email: '' };
+  selectedUser: User = { id: -1, name: '', email: '', image: '' };
   displayedColumns: string[] = ['id', 'name', 'actions'];
 
   get userList(): User[] {

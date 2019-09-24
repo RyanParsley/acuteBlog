@@ -3,6 +3,7 @@ import { UserFilter } from './user-filter';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class UserService {
@@ -12,14 +13,14 @@ export class UserService {
   userList: User[] = [];
 
   findById(id: string): Observable<User> {
-    const url = `http://localhost:3000/users/${id}`;
+    const url = `${environment.baseUrl}/users/${id}`;
     const headers = new HttpHeaders()
     .set('Accept', 'application/json');
     return this.http.get<User>(url, {headers});
   }
 
   load(): void {
-    const url = 'http://localhost:3000/users';
+    const url = `${environment.baseUrl}/users/`;
     const headers = new HttpHeaders()
     .set('Accept', 'application/json');
 
@@ -45,7 +46,7 @@ export class UserService {
   }
 
   find(filter: UserFilter): Observable<User[]> {
-    const url = 'http://localhost:3000/users';
+    const url = `${environment.baseUrl}/users`;
     const headers = new HttpHeaders()
     .set('Accept', 'application/json');
 
@@ -57,7 +58,7 @@ export class UserService {
   }
 
   save(entity: User): Observable<User> {
-    const url = 'http://localhost:3000/users';
+    const url = `${environment.baseUrl}/users`;
     const headers = new HttpHeaders()
     .set('Accept', 'application/json');
     return this.http.post<User>(url, entity, {headers});

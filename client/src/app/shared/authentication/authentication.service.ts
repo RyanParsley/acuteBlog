@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@angular/core';
-import { BROWSER_STORAGE } from './storage';
-import { User } from '../pages/user/user';
-import { AuthResponse } from './authresponse';
-import { DataService } from './data.service';
+import { BROWSER_STORAGE } from '../storage';
+import { User } from '../../pages/user/user';
+import { AuthResponse } from '../authresponse';
+import { DataService } from '../data.service';
 
 @Injectable({
   providedIn: 'root'

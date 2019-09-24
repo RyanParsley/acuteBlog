@@ -4,9 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { UserModule } from './pages/user/user.module';
+import { AuthModule } from './pages/auth/auth.module';
 import { MaterialModule } from './shared/material/material.module';
 import { AppComponent } from './app.component';
-import { HobbitComponent } from './pages/hobbit/hobbit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -18,7 +18,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
-    HobbitComponent,
     NotFoundComponent,
     FooterComponent,
     HeaderComponent
@@ -30,6 +29,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppRoutingModule,
     BrowserAnimationsModule,
     UserModule,
+    AuthModule,
     FlexLayoutModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
