@@ -14,6 +14,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LoginComponent } from './pages/auth/login/login.component';
 
 @NgModule({
   declarations: [

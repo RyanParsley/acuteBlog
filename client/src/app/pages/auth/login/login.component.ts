@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  template: `
+    <app-login-form title="Welcome Back!"></app-login-form>
+  `,
+  styles: [``]
 })
 export class LoginComponent implements OnInit {
 

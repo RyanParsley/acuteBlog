@@ -1,6 +1,11 @@
-export class User {
-  id = -1;
-  name = '';
-  email = '';
-  image = 'http://fillmurray.com/200/300';
+export interface Credentials {
+  username: string;
+  password: string;
+}
+
+export interface User {
+  name: string;
+  id: number;
+  email: string;
+  image: string;
 }
