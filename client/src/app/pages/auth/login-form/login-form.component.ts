@@ -8,10 +8,11 @@ import { Credentials } from '../../user/user';
     <mat-card>
       <mat-card-title>{{ title }}</mat-card-title>
       <mat-card-content>
-        <form [formGroup]="form" (ngSubmit)="submit()">
+        <form id="loginForm" [formGroup]="form" (ngSubmit)="submit()">
           <p>
             <mat-form-field>
               <input
+                name="username"
                 type="text"
                 matInput
                 placeholder="Username"
@@ -23,6 +24,7 @@ import { Credentials } from '../../user/user';
           <p>
             <mat-form-field>
               <input
+                name="password"
                 type="password"
                 matInput
                 placeholder="Password"
@@ -85,6 +87,7 @@ export class LoginFormComponent implements OnInit {
       this.form.enable();
     }
   }
+  @Input() submit!: () => void;
 
   @Input() errorMessage = '';
 
@@ -104,9 +107,4 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  submit() {
-    if (this.form.valid) {
-      this.submitted.emit(this.form.value);
-    }
-  }
 }
