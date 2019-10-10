@@ -34,7 +34,6 @@ import { LoginComponent } from './pages/auth/login/login.component';
     FlexLayoutModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
