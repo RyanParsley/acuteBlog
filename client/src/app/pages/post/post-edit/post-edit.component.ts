@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss']
+  templateUrl: './post-edit.component.html',
+  styleUrls: ['./post-edit.component.scss']
 })
 export class PostEditComponent implements OnInit {
 
