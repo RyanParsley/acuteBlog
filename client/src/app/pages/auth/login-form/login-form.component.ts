@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Credentials } from '../../user/user';
 
@@ -8,7 +9,7 @@ import { Credentials } from '../../user/user';
     <mat-card>
       <mat-card-title>{{ title }}</mat-card-title>
       <mat-card-content>
-        <form id="loginForm" [formGroup]="form" (ngSubmit)="submit()">
+        <form id="loginForm" [formGroup]="form" (ngSubmit)="submit(form.get('username').value)">
           <p>
             <mat-form-field>
               <input
@@ -38,7 +39,8 @@ import { Credentials } from '../../user/user';
           </p>
 
           <p class="loginButtons">
-            <button type="submit" mat-button>Login</button>
+            <a href="/signup">Already have an account?</a>
+            <button type="submit" mat-button>{{ submitText }}</button>
           </p>
         </form>
       </mat-card-content>
@@ -78,7 +80,7 @@ import { Credentials } from '../../user/user';
     `,
   ],
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent {
   @Input()
   set pending(isPending: boolean) {
     if (isPending) {
@@ -90,6 +92,7 @@ export class LoginFormComponent implements OnInit {
   @Input() submit!: () => void;
 
   @Input() errorMessage = '';
+  @Input() submitText = 'Submit';
 
   @Input() title: string;
 
@@ -100,11 +103,7 @@ export class LoginFormComponent implements OnInit {
     password: new FormControl(''),
   });
 
-  constructor() {
+  constructor(private router: Router) {
     this.title = 'Form Default Title';
   }
-
-  ngOnInit() {
-  }
-
 }

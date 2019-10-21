@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { UserModule } from './pages/user/user.module';
@@ -37,6 +38,9 @@ import { NotFoundModule } from './pages/not-found/not-found.module';
     FlexLayoutModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     NotFoundModule
+  ],
+  providers: [
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

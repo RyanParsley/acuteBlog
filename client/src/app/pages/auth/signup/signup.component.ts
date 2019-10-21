@@ -5,7 +5,7 @@ import { DialogComponent } from './dialog.component';
 @Component({
   selector: 'app-signup',
   template: `
-    <app-login-form title="Welcome to the party pal!" [submit]="submitSignup"></app-login-form>
+    <app-login-form title="Welcome to the party pal!" [submit]="submitSignup" submitText="Dynamic works!"></app-login-form>
   `,
   styles: [``]
 })

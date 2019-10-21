@@ -17,16 +17,18 @@ export class LoginPage {
 
   async submitLogin(name: string, password: string): Promise<any> {
     if (name) {
+      await this.loginForm.name.clear();
       await this.loginForm.name.sendKeys(name);
     }
     if (password) {
-      await this.loginForm.name.sendKeys(password);
+      await this.loginForm.password.clear();
+      await this.loginForm.password.sendKeys(password);
     }
     await this.loginForm.submitButton.click();
   }
 
   navigateTo() {
-    return browser.get(`${browser.baseUrl}/login`) as Promise<any>;
+    return browser.get(`${browser.baseUrl}login`) as Promise<any>;
   }
 
   getTitleText() {

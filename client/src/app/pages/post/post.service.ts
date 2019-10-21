@@ -1,20 +1,49 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Post } from './post';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  postList: Post[] = [];
+
+  displayedColumns: string[] = ['title'];
 
   load(id: string) {
+    const url = `${environment.baseUrl}/posts/${id}`;
+    const headers = new HttpHeaders()
+    .set('Accept', 'application/json');
+    return this.http.get<Post>(url, {headers});
   }
+
   loadAll() {
+    const url = `${environment.baseUrl}/posts/`;
+    const headers = new HttpHeaders()
+    .set('Accept', 'application/json');
+
+    this.http.get<Post[]>(url, { headers }).subscribe(
+      result => {
+        this.postList = result;
+      },
+      err => {
+        console.error('error loading', err);
+      }
+    );
   }
-  create() {
+
+  save(entity: Post): Observable<Post> {
+    const url = `${environment.baseUrl}/posts`;
+    const headers = new HttpHeaders()
+    .set('Accept', 'application/json');
+    return this.http.post<Post>(url, entity, {headers});
   }
-  update() {
-  }
+
   delete(id: string) {
   }
 }

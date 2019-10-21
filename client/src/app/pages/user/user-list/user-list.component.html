@@ -3,9 +3,9 @@
     <mat-card class="card" >
       <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
         <h3>Users</h3>
-        <button button="submit" mat-raised-button color="primary">
+        <a [routerLink]="['/user/new']" mat-raised-button color="primary">
           <mat-icon>add</mat-icon> Add User
-        </button>
+        </a>
       </mat-card-title>
       <mat-card-content>
         <div class="example-container mat-elevation-z8">

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { UserFilter } from '../user-filter';
 import { UserService } from '../user.service';
 import { User } from '../user';

@@ -1,6 +1,7 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "TestTestington"}
+    { "id": 1, "title": "First Post", "authorId": 1, "body": "This is the body of a blog post"},
+    { "id": 2, "title": "Second Post", "authorId": 1, "body": "This is the body of a blog post"}
   ],
   "comments": [
     { "id": 1, "body": "some comment", "postId": 1, "authorId": 3 }

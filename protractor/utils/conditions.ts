@@ -1,6 +1,4 @@
-import { element, by, ExpectedConditions, browser, protractor, ElementFinder, ElementArrayFinder } from 'protractor';
-
-const EC = protractor.ExpectedConditions;
+import { ExpectedConditions, browser } from 'protractor';
 
 export class Conditions {
   async get(url: string, urlName: string) {

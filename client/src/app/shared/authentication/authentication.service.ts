@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { BROWSER_STORAGE } from '../storage';
+import { Storage } from '../storage';
 import { User } from '../../pages/user/user';
 import { AuthResponse } from '../authresponse';
 import { DataService } from '../data.service';
@@ -10,7 +10,7 @@ import { DataService } from '../data.service';
 export class AuthenticationService {
 
   constructor(
-    @Inject(BROWSER_STORAGE) private storage: Storage,
+    @Inject(Storage) private storage: Storage,
     private dataService: DataService
   ) { }
 
