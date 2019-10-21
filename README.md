@@ -20,7 +20,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
-Run `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `npm run e2e` to execute the end-to-end tests via
+[Protractor](http://www.protractortest.org/). Note, at this time you need the
+dev server so the end to end tests can use the database running on port 3000.
 
 ## Further help
 
