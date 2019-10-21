@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-describe('AcuteBlog App', () => {
+describe('AcuteBlog App: Exercise 1', () => {
   it('should be a thing that does not impload', () => {
     // Visit the app
     browser.get('http://localhost:4201');

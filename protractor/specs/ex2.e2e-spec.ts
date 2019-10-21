@@ -4,7 +4,7 @@ import { UserListPage } from '../pages/user-list.po';
 import { element, by, browser, logging, ExpectedConditions } from 'protractor';
 import { login, logout } from '../utils/helpers';
 
-describe('AcuteBlog App', () => {
+describe('AcuteBlog App: Exercise 2', () => {
   let page: AppPage;
   let loginPage: LoginPage;
   let userListPage: UserListPage;
