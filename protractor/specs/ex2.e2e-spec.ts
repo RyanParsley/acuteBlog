@@ -1,20 +1,6 @@
-import { AppPage } from '../pages/app.po';
-import { LoginPage } from '../pages/login.po';
-import { UserListPage } from '../pages/user-list.po';
-import { element, by, browser, logging, ExpectedConditions } from 'protractor';
-import { login, logout } from '../utils/helpers';
+import { element, by, browser, logging } from 'protractor';
 
 describe('AcuteBlog App: Exercise 2', () => {
-  let page: AppPage;
-  let loginPage: LoginPage;
-  let userListPage: UserListPage;
-
-  beforeEach(() => {
-    page = new AppPage();
-    loginPage = new LoginPage();
-    userListPage = new UserListPage();
-  });
-
   it('should default to a home page with a header', () => {
     // Make an assertion that the title of the landing page is 'Acute Blog'
     browser.get('http://localhost:4201');
@@ -50,10 +36,6 @@ describe('AcuteBlog App: Exercise 2', () => {
   });
 
   afterEach(async () => {
-    // Tidy up state after tests
-
-    logout();
-
     // Assert that there are no errors emitted from the browser
 
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);

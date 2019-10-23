@@ -23,7 +23,8 @@ export class HeaderComponent {
     { icon: 'home', text: 'Home', link: '/' },
     { icon: 'dashboard', text: 'Users', link: '/user', condition: 'onlyAuth'},
     { icon: 'dashboard', text: 'Posts', link: '/post' },
-    { icon: 'input', text: 'Log In', link: '/login', condition: 'onlyAnon' }
+    { icon: 'input', text: 'Log In', link: '/login', condition: 'onlyAnon' },
+    { icon: 'input', text: 'Sign Up', link: '/signup', condition: 'onlyAnon' }
   ];
 
   showItem(item: NavItem) {

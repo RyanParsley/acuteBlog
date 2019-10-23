@@ -3,7 +3,7 @@ import { browser, by, element, ElementFinder } from 'protractor';
 export class LoginPage {
 
   readonly loginForm = {
-    loginForm: element(by.id('loginForm')),
+    loginForm: element(by.id('authForm')),
     get name(): ElementFinder {
       return this.loginForm.$('[formcontrolname="username"]');
     },

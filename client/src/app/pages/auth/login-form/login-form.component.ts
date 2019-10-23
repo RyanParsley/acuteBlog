@@ -9,7 +9,7 @@ import { Credentials } from '../../user/user';
     <mat-card>
       <mat-card-title>{{ title }}</mat-card-title>
       <mat-card-content>
-        <form id="loginForm" [formGroup]="form" (ngSubmit)="submit(form.get('username').value)">
+        <form id="authForm" [formGroup]="form" (ngSubmit)="submit(form.get('username').value)">
           <p>
             <mat-form-field>
               <input
@@ -99,7 +99,7 @@ export class LoginFormComponent {
   @Output() submitted = new EventEmitter<Credentials>();
 
   form: FormGroup = new FormGroup({
-    username: new FormControl('ngrx'),
+    username: new FormControl('someUser'),
     password: new FormControl(''),
   });
 
