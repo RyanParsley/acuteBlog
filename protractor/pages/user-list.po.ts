@@ -8,4 +8,8 @@ export class UserListPage {
   getTitleText() {
     return element(by.css('.mat-card-title h3')).getText() as Promise<string>;
   }
+
+  getUserList() {
+    return element.all(by.css('mat-row'));
+  }
 }
