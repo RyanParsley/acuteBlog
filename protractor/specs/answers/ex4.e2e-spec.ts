@@ -36,8 +36,7 @@ describe('AcuteBlog App: Exercise 4', () => {
   });
 
   it('should have a list of users on the user-list page', () => {
-    // Make an assertion that the title of the user-list page is 'Users'
-    // Hint: it's not the same page that we tested above
+    // Make an assertion about the list of users on this page
     login();
 
     userListPage.navigateTo();

@@ -3,7 +3,7 @@
     <mat-card class="card" >
       <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
         <h3>Posts</h3>
-        <a [routerLink]="['/post/new']" mat-raised-button color="primary">
+        <a *ngIf="isUserLoggedIn" [routerLink]="['/post/new']" mat-raised-button color="primary">
           <mat-icon>add</mat-icon> Add Post
         </a>
       </mat-card-title>

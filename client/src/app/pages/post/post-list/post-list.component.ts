@@ -15,6 +15,10 @@ export class PostListComponent implements OnInit {
     return this.postService.postList;
   }
 
+  get isUserLoggedIn(): boolean {
+    return !!localStorage.getItem('currentUser') || false;
+  }
+
   constructor(private postService: PostService) { }
 
   ngOnInit() {

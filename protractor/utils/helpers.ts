@@ -24,3 +24,14 @@ export function logout() {
   browser.executeScript('window.localStorage.clear();');
 }
 
+export function getCurrentUser() {
+  return browser.executeScript('return window.localStorage.getItem("currentUser");');
+}
+
+export function loginFaster() {
+  // We need to hit any url to establish localStorage to interact with
+  browser.get(browser.baseUrl);
+
+  // Do what the login form would without interacting with the dom
+  return browser.executeScript('return window.localStorage.setItem("currentUser", "mockUser");');
+}
