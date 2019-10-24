@@ -20,7 +20,6 @@ export function login() {
 
 export function logout() {
   // We'll want to start with a clean slate more often than not
-  browser.executeScript('window.sessionStorage.clear();');
   browser.executeScript('window.localStorage.clear();');
 }
 
@@ -33,5 +32,6 @@ export function loginFaster() {
   browser.get(browser.baseUrl);
 
   // Do what the login form would without interacting with the dom
-  return browser.executeScript('return window.localStorage.setItem("currentUser", "mockUser");');
+  browser.executeScript('return window.localStorage.setItem("currentUser", "mockUser");');
+  browser.navigate().refresh();
 }

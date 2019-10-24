@@ -6,7 +6,7 @@ describe('AcuteBlog App: Exercise 2', () => {
 
   });
 
-  it('user-list page should not be accessible', () => {
+  it('has a user-list page that should not be accessible to anonymous users', () => {
     // Make an assertion that the title of the user-list page is 'Users'
     // Hint: it's not the same page that we tested above
 
@@ -21,7 +21,7 @@ describe('AcuteBlog App: Exercise 2', () => {
 
   });
 
-  it('should have publically accessible post list', () => {
+  it('should have publically accessible list of posts', () => {
 
   });
 

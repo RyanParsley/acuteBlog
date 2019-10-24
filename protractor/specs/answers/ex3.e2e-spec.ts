@@ -1,5 +1,6 @@
 import { SignupPage } from '@po/signup.po';
-import { browser, logging, ExpectedConditions } from 'protractor';
+import { browser, logging } from 'protractor';
+import { waitForAlert, waitForAlertToContainText } from '@utils/conditions';
 
 describe('AcuteBlog App: Exercise 3', () => {
   // Define your signupPage
@@ -28,12 +29,10 @@ describe('AcuteBlog App: Exercise 3', () => {
     signupPage.submitLogin('foo', 'bar');
 
     // Assert success based on tehh alert Dialog being present with a string containing 'Signup'
-    browser.wait(ExpectedConditions.alertIsPresent(), 5000);
-    const alertDialog = browser.switchTo().alert();
-    expect(alertDialog.getText()).toContain('Signup');
+    expect(waitForAlertToContainText('Signup')).toBe(true);
 
     // Let's be tidy and close the alert
-    alertDialog.accept();
+    browser.switchTo().alert().accept();
   });
 
 

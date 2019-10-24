@@ -10,7 +10,7 @@ describe('AcuteBlog App: Exercise 2', () => {
     expect(title.getText()).toEqual('Acute Blog');
   });
 
-  it('user-list page should not be accessible', () => {
+  it('has a user-list page that should not be accessible to anonymous users', () => {
     // Make an assertion that the title of the user-list page is 'Users'
     // Hint: it's not the same page that we tested above
     browser.get('http://localhost:4201/user');
@@ -27,7 +27,7 @@ describe('AcuteBlog App: Exercise 2', () => {
     expect(browser.getCurrentUrl()).toContain('404');
   });
 
-  it('should have publically accessible post list', () => {
+  it('should have publically accessible list of posts', () => {
     browser.get('http://localhost:4201/post');
     expect(browser.getCurrentUrl()).toContain('post');
 
