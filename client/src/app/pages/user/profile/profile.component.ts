@@ -3,12 +3,21 @@ import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../user.service';
 import { User } from '../user';
 import { map, switchMap } from 'rxjs/operators';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  template: `
+    <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+      <h1>Welcome, {{ user.name }}</h1>
+      <div fxFlex="20%">
+        <img [src]="user.image" alt="Image of {{user.name}}" />
+      </div>
+      <div fxFlex="20%">
+        <p>Bio will go here</p>
+      </div>
+    </div>
+  `,
+  styles: [``]
 })
 export class ProfileComponent implements OnInit {
   id = -1;
@@ -36,7 +45,7 @@ export class ProfileComponent implements OnInit {
         this.errors = '';
       },
       err => {
-        this.errors = 'Error loading';
+        this.errors = `Error loading: ${err}`;
       }
     );
   }

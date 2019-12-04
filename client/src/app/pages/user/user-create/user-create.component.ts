@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-user-create',
@@ -21,11 +21,8 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: ['']
 })
-export class UserCreateComponent implements OnInit {
+export class UserCreateComponent {
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

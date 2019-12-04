@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-edit',
@@ -8,17 +8,9 @@ import { Component, OnInit } from '@angular/core';
       <p>edit works!</p>
     </div>
   `,
-  styles: [`
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 1em;
-    }
-  `]
+  styles: [``]
 })
-export class PostEditComponent implements OnInit {
+export class PostEditComponent {
 
   constructor() { }
-
-  ngOnInit() { }
 }

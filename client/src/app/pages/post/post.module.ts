@@ -13,11 +13,6 @@ import { POST_ROUTES } from './post.routes';
 @NgModule({
   declarations: [PostCreateComponent, PostEditComponent, PostListComponent, PostDisplayComponent],
   providers: [PostService],
-  imports: [
-    CommonModule,
-    FormsModule,
-    MaterialModule,
-    RouterModule.forChild(POST_ROUTES)
-  ]
+  imports: [CommonModule, FormsModule, MaterialModule, RouterModule.forChild(POST_ROUTES)]
 })
-export class PostModule { }
+export class PostModule {}

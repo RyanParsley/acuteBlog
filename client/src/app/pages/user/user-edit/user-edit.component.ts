@@ -3,12 +3,27 @@ import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../user.service';
 import { User } from '../user';
 import { map, switchMap } from 'rxjs/operators';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-user-edit',
-  templateUrl: './user-edit.component.html',
-  styleUrls: ['./user-edit.component.scss']
+  template: `
+    <div class="card">
+      <div class="header">
+        <h1 class="title">Profile</h1>
+      </div>
+      <div class="content">
+        <p *ngIf="errors">{{ errors }}</p>
+        <form *ngIf="user">
+          <label>Id:</label>
+          <input [(ngModel)]="user.id" name="id" class="form-control">
+          <label>Name:</label>
+          <input [(ngModel)]="user.name" name="name" class="form-control">
+          <button (click)="save()">Save</button>
+        </form>
+      </div>
+    </div>
+  `,
+  styles: [``]
 })
 export class UserEditComponent implements OnInit {
   id = -1;
@@ -36,7 +51,7 @@ export class UserEditComponent implements OnInit {
         this.errors = '';
       },
       err => {
-        this.errors = 'Error loading';
+        this.errors = `Error loading: ${err}`;
       }
     );
   }
@@ -48,7 +63,7 @@ export class UserEditComponent implements OnInit {
         this.errors = 'Save was successful!';
       },
       err => {
-        this.errors = 'Error saving';
+        this.errors = `Error saving: ${err}`;
       }
     );
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-post-create',
@@ -21,18 +21,10 @@ import { Component, OnInit } from '@angular/core';
       </div>
     </div>
   `,
-  styles: [`
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 1em;
-    }
-  `]
+  styles: [``]
 })
-export class PostCreateComponent implements OnInit {
+export class PostCreateComponent {
   post = { id: '', name: '' };
 
   constructor() { }
-
-  ngOnInit() { }
 }

@@ -10,8 +10,96 @@ interface NavItem {
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  template: `
+    <mat-sidenav-container>
+      <mat-sidenav
+        opened
+        #sidenav
+        role="navigation"
+        mode="side"
+        [(opened)]="opened"
+        (opened)="events.push('open!')"
+        (closed)="events.push('close!')">
+        <mat-nav-list>
+          <a *ngFor="let item of navItems" mat-list-item [routerLink]="[item.link]">
+            <mat-icon class="icon">{{ item.icon }}</mat-icon>
+            <span class="label">{{item.text}}</span>
+          </a>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <mat-toolbar color="primary">
+          <div fxHide.gt-xs>
+            <button (click)="sidenav.toggle()" mat-icon-button >
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+          <div>
+            <a id="header-title">Acute Blog </a>
+          </div>
+          <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+            <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+              <ng-container *ngFor="let item of navItems">
+                <li *ngIf="showItem(item)">
+                  <a [routerLink]="[item.link]">
+                    <mat-icon class="icon">{{ item.icon }}</mat-icon>
+                    <span class="label">{{item.text}}</span>
+                  </a>
+                </li>
+              </ng-container>
+              <li *ngIf='isLoggedIn()'>
+                <a (click)='logOut()'>
+                  <mat-icon class="icon">input</mat-icon>
+                  <span class="label">Log Out</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </mat-toolbar>
+        <main>
+        <router-outlet></router-outlet>
+        </main>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  `,
+  styles: [`
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    a:hover,
+    a:active {
+      color: lightgray;
+    }
+
+    .navigation-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .icon {
+      display: inline-block;
+      height: 30px;
+      margin: 0 auto;
+      padding-right: 15px;
+      text-align: center;
+      vertical-align: middle;
+      width: 15%;
+    }
+
+    .label {
+      display: inline-block;
+      line-height: 30px;
+      margin: 0;
+      width: 85%;
+    }
+    .mat-drawer-container {
+      min-height: 70vh;
+    }
+  `]
 })
 export class HeaderComponent {
   constructor(private router: Router) {}

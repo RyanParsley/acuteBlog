@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../post.service';
 import { Post } from '../post';
 import { map, switchMap } from 'rxjs/operators';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-post',
@@ -13,11 +12,7 @@ import { of } from 'rxjs';
       <p>{{ post.body }}</p>
     </div>
   `,
-  styles: [`
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-  `]
+  styles: [``]
 })
 export class PostDisplayComponent implements OnInit {
   id = -1;
@@ -45,7 +40,7 @@ export class PostDisplayComponent implements OnInit {
         this.errors = '';
       },
       err => {
-        this.errors = 'Error loading';
+        this.errors = `Error loading: ${err}`;
       }
     );
   }
