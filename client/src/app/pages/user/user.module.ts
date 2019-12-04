@@ -7,12 +7,10 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { ProfileComponent } from './profile/profile.component';
-import { UserService } from './user.service';
 import { USER_ROUTES } from './user.routes';
 
 @NgModule({
   declarations: [UserEditComponent, UserListComponent, UserCreateComponent, ProfileComponent],
-  imports: [CommonModule, FormsModule, MaterialModule, RouterModule.forChild(USER_ROUTES)],
-  providers: [UserService]
+  imports: [CommonModule, FormsModule, MaterialModule, RouterModule.forChild(USER_ROUTES)]
 })
 export class UserModule {}

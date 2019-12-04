@@ -16,7 +16,6 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { LoginComponent } from './pages/auth/login/login.component';
 import { NotFoundModule } from './pages/not-found/not-found.module';
 
 @NgModule({
