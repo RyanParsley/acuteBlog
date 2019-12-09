@@ -8,8 +8,7 @@ import { Post } from './post';
   providedIn: 'root'
 })
 export class PostService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   postList: Post[] = [];
 
@@ -17,15 +16,13 @@ export class PostService {
 
   load(id: string) {
     const url = `${environment.baseUrl}/posts/${id}`;
-    const headers = new HttpHeaders()
-    .set('Accept', 'application/json');
-    return this.http.get<Post>(url, {headers});
+    const headers = new HttpHeaders().set('Accept', 'application/json');
+    return this.http.get<Post>(url, { headers });
   }
 
   loadAll() {
     const url = `${environment.baseUrl}/posts/`;
-    const headers = new HttpHeaders()
-    .set('Accept', 'application/json');
+    const headers = new HttpHeaders().set('Accept', 'application/json');
 
     this.http.get<Post[]>(url, { headers }).subscribe(
       result => {
@@ -39,9 +36,8 @@ export class PostService {
 
   save(entity: Post): Observable<Post> {
     const url = `${environment.baseUrl}/posts`;
-    const headers = new HttpHeaders()
-    .set('Accept', 'application/json');
-    return this.http.post<Post>(url, entity, {headers});
+    const headers = new HttpHeaders().set('Accept', 'application/json');
+    return this.http.post<Post>(url, entity, { headers });
   }
 
   delete(id: string) {

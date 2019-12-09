@@ -15,45 +15,39 @@ import { map, switchMap } from 'rxjs/operators';
         <p *ngIf="errors">{{ errors }}</p>
         <form *ngIf="user">
           <label>Id:</label>
-          <input [(ngModel)]="user.id" name="id" class="form-control">
+          <input [(ngModel)]="user.id" name="id" class="form-control" />
           <label>Name:</label>
-          <input [(ngModel)]="user.name" name="name" class="form-control">
+          <input [(ngModel)]="user.name" name="name" class="form-control" />
           <button (click)="save()">Save</button>
         </form>
       </div>
     </div>
-  `,
-  styles: [``]
+  `
 })
 export class UserEditComponent implements OnInit {
   id = -1;
-  user: User = { id: -1, name: '', email: '', image: ''};
-  errors = '';
+  user: User = { id: -1, name: '', email: '', image: '' };
+  errors: string | null = null;
 
-  constructor(
-    private route: ActivatedRoute,
-    private userService: UserService
-  ) { }
+  constructor(private route: ActivatedRoute, private userService: UserService) {}
 
   ngOnInit() {
-    this
-    .route
-    .params
-    .pipe(
-      map(p => p.id),
+    this.route.params
+      .pipe(
+        map(p => p.id),
         switchMap(id => {
-        return this.userService.findById(id);
-      })
-    )
-    .subscribe(
-      user => {
-        this.user = user;
-        this.errors = '';
-      },
-      err => {
-        this.errors = `Error loading: ${err}`;
-      }
-    );
+          return this.userService.findById(id);
+        })
+      )
+      .subscribe(
+        user => {
+          this.user = user;
+          this.errors = '';
+        },
+        err => {
+          this.errors = `Error loading: ${err}`;
+        }
+      );
   }
 
   save() {

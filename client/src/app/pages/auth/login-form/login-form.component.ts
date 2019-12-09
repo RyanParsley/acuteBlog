@@ -27,36 +27,38 @@ import { Credentials } from '../../user/user';
       </mat-card-content>
     </mat-card>
   `,
-  styles: [`
-    :host {
-      display: flex;
-      justify-content: center;
-      margin: 72px 0;
-    }
-    .mat-form-field {
-      width: 100%;
-      min-width: 300px;
-    }
-    mat-card-title,
-    mat-card-content {
-      display: flex;
-      justify-content: center;
-    }
-    .loginError {
-      padding: 16px;
-      width: 300px;
-      color: white;
-      background-color: red;
-    }
-    .loginButtons {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-    }
-    .loginButtons a {
-      margin-top: 10px;
-    }
-  `],
+  styles: [
+    `
+      :host {
+        display: flex;
+        justify-content: center;
+        margin: 72px 0;
+      }
+      .mat-form-field {
+        width: 100%;
+        min-width: 300px;
+      }
+      mat-card-title,
+      mat-card-content {
+        display: flex;
+        justify-content: center;
+      }
+      .loginError {
+        padding: 16px;
+        width: 300px;
+        color: white;
+        background-color: red;
+      }
+      .loginButtons {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+      }
+      .loginButtons a {
+        margin-top: 10px;
+      }
+    `
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginFormComponent {
@@ -72,7 +74,7 @@ export class LoginFormComponent {
 
   form: FormGroup = new FormGroup({
     username: new FormControl('someUser'),
-    password: new FormControl(''),
+    password: new FormControl('')
   });
 
   constructor(private router: Router) {

@@ -11,37 +11,31 @@ import { map, switchMap } from 'rxjs/operators';
       <h1>{{ post.title }}</h1>
       <p>{{ post.body }}</p>
     </div>
-  `,
-  styles: [``]
+  `
 })
 export class PostDisplayComponent implements OnInit {
   id = -1;
-  post: Post = { id: -1, title: '', authorId: -1, body: ''};
+  post: Post = { id: -1, title: '', authorId: -1, body: '' };
   errors = '';
 
-  constructor(
-    private route: ActivatedRoute,
-    private postService: PostService
-  ) { }
+  constructor(private route: ActivatedRoute, private postService: PostService) {}
 
   ngOnInit() {
-    this
-    .route
-    .params
-    .pipe(
-      map(p => p.id),
+    this.route.params
+      .pipe(
+        map(p => p.id),
         switchMap(id => {
-        return this.postService.load(id);
-      })
-    )
-    .subscribe(
-      post => {
-        this.post = post;
-        this.errors = '';
-      },
-      err => {
-        this.errors = `Error loading: ${err}`;
-      }
-    );
+          return this.postService.load(id);
+        })
+      )
+      .subscribe(
+        post => {
+          this.post = post;
+          this.errors = '';
+        },
+        err => {
+          this.errors = `Error loading: ${err}`;
+        }
+      );
   }
 }

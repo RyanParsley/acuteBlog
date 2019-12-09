@@ -11,40 +11,41 @@ import { Component } from '@angular/core';
       </div>
     </footer>
   `,
-  styles: [`
-    .footer {
-      padding: 12px;
-      margin-top: 40px;
-    }
-    .footer-list {
-      align-items: center;
-      display: flex;
-      flex-flow: row wrap;
-      padding: 8px;
-    }
-    .footer-message {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      min-width: 225px;
-      text-align: center;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-
-      &:hover {
-      text-decoration: underline;
+  styles: [
+    `
+      .footer {
+        padding: 12px;
+        margin-top: 40px;
       }
-    }
-    @media screen and (max-width: 884px){
       .footer-list {
-        flex-direction: column;
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 8px;
       }
-    }
-  `]
+      .footer-message {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        min-width: 225px;
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      @media screen and (max-width: 884px) {
+        .footer-list {
+          flex-direction: column;
+        }
+      }
+    `
+  ]
 })
 export class FooterComponent {
-
-  constructor() { }
+  constructor() {}
 }

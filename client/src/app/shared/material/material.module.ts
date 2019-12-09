@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import {
   MatSidenavModule,
@@ -10,7 +10,7 @@ import {
   MatTableModule,
   MatInputModule,
   MatProgressSpinnerModule,
-  MatDialogModule,
+  MatDialogModule
 } from '@angular/material';
 
 @NgModule({
@@ -24,7 +24,7 @@ import {
     MatTableModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    MatDialogModule,
+    MatDialogModule
   ],
   exports: [
     MatSidenavModule,
@@ -36,7 +36,7 @@ import {
     MatTableModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    MatDialogModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule {}

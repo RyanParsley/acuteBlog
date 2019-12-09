@@ -7,9 +7,8 @@ import { Component } from '@angular/core';
       <h1>Oh no!</h1>
       <p>Page not found</p>
     </div>
-  `,
-  styles: [``]
+  `
 })
 export class NotFoundComponent {
-  constructor() { }
+  constructor() {}
 }

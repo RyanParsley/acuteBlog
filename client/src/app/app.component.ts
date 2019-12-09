@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
       <router-outlet></router-outlet>
     </app-header>
     <app-footer></app-footer>
-  `,
-  styles: [``]
+  `
 })
 export class AppComponent {
   title = 'Acute Blog';

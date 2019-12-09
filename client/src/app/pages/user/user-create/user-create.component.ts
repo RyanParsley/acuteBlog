@@ -9,20 +9,22 @@ import { Component } from '@angular/core';
       </div>
       <div class="content">
         <p *ngIf="errors">{{ errors }}</p>
-        <form >
+        <form>
           <label>Id:</label>
-          <input [(ngModel)]="post.id" name="id" class="form-control">
+          <input [(ngModel)]="post.id" name="id" class="form-control" />
           <label>Name:</label>
-          <input [(ngModel)]="post.name" name="name" class="form-control">
+          <input [(ngModel)]="post.name" name="name" class="form-control" />
           <button (click)="save()">Create</button>
         </form>
       </div>
     </div>
-  `,
-  styles: ['']
+  `
 })
 export class UserCreateComponent {
+  errors: string | null = null;
+  post = { id: -1, name: '' };
 
-  constructor() { }
+  constructor() {}
 
+  save = () => {};
 }

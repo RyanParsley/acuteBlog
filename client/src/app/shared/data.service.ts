@@ -5,23 +5,24 @@ import { User } from '../pages/user/user';
   providedIn: 'root'
 })
 export class DataService {
-
-  constructor() { }
+  constructor() {}
 
   public login(user: User): Promise<any> {
     return new Promise(resolve => {
-    setTimeout(() => {
-      resolve('resolved');
-      return true;
-    }, 2000);
-  });
+      setTimeout(() => {
+        resolve('resolved');
+        console.log('Logged in as: ', user);
+        return true;
+      }, 2000);
+    });
   }
   public register(user: User): Promise<any> {
     return new Promise(resolve => {
-    setTimeout(() => {
-      resolve('resolved');
-      return true;
-    }, 2000);
-  });
+      setTimeout(() => {
+        resolve('resolved');
+        console.log('Registered user: ', user);
+        return true;
+      }, 2000);
+    });
   }
 }

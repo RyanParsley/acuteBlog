@@ -3,6 +3,7 @@ import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from
 @Injectable({ providedIn: 'root' })
 export class AnonymousGuard implements CanActivate {
   constructor(private router: Router) {}
+
   canActivate(router: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     // check if the user is logged in
     if (!localStorage.getItem('currentUser')) {

@@ -7,10 +7,8 @@ import { Component } from '@angular/core';
       <h1 class="title">Edit Post</h1>
       <p>edit works!</p>
     </div>
-  `,
-  styles: [``]
+  `
 })
 export class PostEditComponent {
-
-  constructor() { }
+  constructor() {}
 }

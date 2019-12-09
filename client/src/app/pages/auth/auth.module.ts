@@ -11,13 +11,7 @@ import { AUTH_ROUTES } from './auth.routes';
 
 @NgModule({
   declarations: [LoginComponent, SignupComponent, LoginFormComponent, DialogComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MaterialModule,
-    RouterModule.forChild(AUTH_ROUTES)
-  ],
-  entryComponents: [ DialogComponent ]
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MaterialModule, RouterModule.forChild(AUTH_ROUTES)],
+  entryComponents: [DialogComponent]
 })
-export class AuthModule { }
+export class AuthModule {}

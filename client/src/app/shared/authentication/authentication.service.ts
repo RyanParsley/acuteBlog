@@ -8,14 +8,10 @@ import { DataService } from '../data.service';
   providedIn: 'root'
 })
 export class AuthenticationService {
-
-  constructor(
-    @Inject(Storage) private storage: Storage,
-    private dataService: DataService
-  ) { }
+  constructor(@Inject(Storage) private storage: Storage, private dataService: DataService) {}
 
   public getToken(): string {
-    return this.storage.getItem('loc8r-token') || '';
+    return this.storage.getItem('user-token') || '';
   }
 
   public saveToken(token: string): void {
@@ -23,8 +19,7 @@ export class AuthenticationService {
   }
 
   public login(user: User): Promise<any> {
-    return this.dataService.login(user)
-      .then((authResp: AuthResponse) => this.saveToken(authResp.token));
+    return this.dataService.login(user).then((authResp: AuthResponse) => this.saveToken(authResp.token));
   }
 
   public logout(): void {
@@ -32,9 +27,6 @@ export class AuthenticationService {
   }
 
   public register(user: User): Promise<any> {
-    return this.dataService.register(user)
-      .then((authResp: AuthResponse) => this.saveToken(authResp.token));
+    return this.dataService.register(user).then((authResp: AuthResponse) => this.saveToken(authResp.token));
   }
 }
-
-

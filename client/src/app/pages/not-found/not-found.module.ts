@@ -3,17 +3,8 @@ import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found.component';
 
 @NgModule({
-  imports: [
-    RouterModule.forChild([
-      { path: '404', component: NotFoundComponent },
-      { path: '**', redirectTo: '/404' }
-    ])
-  ],
-  declarations: [
-    NotFoundComponent
-  ],
-  exports: [
-    RouterModule
-  ]
+  imports: [RouterModule.forChild([{ path: '404', component: NotFoundComponent }, { path: '**', redirectTo: '/404' }])],
+  declarations: [NotFoundComponent],
+  exports: [RouterModule]
 })
-export class NotFoundModule { }
+export class NotFoundModule {}

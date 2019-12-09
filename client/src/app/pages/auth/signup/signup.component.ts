@@ -6,8 +6,7 @@ import { DialogComponent } from './dialog.component';
   selector: 'app-signup',
   template: `
     <app-login-form title="Welcome to the party pal!" [submit]="submitSignup" submitText="Dynamic works!"></app-login-form>
-  `,
-  styles: [``]
+  `
 })
 export class SignupComponent implements OnInit {
   animal = 'snake';
@@ -26,7 +25,7 @@ export class SignupComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '250px',
-      data: {name: this.name, animal: this.animal}
+      data: { name: this.name, animal: this.animal }
     });
 
     dialogRef.afterClosed().subscribe(result => {

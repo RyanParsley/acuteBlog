@@ -19,11 +19,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { NotFoundModule } from './pages/not-found/not-found.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FooterComponent,
-    HeaderComponent
-  ],
+  declarations: [AppComponent, FooterComponent, HeaderComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -38,9 +34,7 @@ import { NotFoundModule } from './pages/not-found/not-found.module';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     NotFoundModule
   ],
-  providers: [
-    CookieService
-  ],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
