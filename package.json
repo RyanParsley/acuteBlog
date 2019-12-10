@@ -15,7 +15,7 @@
     "e2e:authenticated": "ng e2e --port=4201 --suite='authenticated'",
     "e2e:smoke": "protractor protractor/protractor.conf.js --baseUrl='http://localhost:4200' --grep='#smoke'",
     "ci:start": "node ./bin/www",
-    "ci:e2e": "protractor protractor/protractor.conf.js --baseUrl='http://localhost:4201/app/' --suite='answer3'",
+    "ci:e2e": "npx protractor protractor/protractor.conf.js --baseUrl='http://localhost:4201/app/' --suite='answer3'",
     "ci:run": "start-server-and-test ci:start http://localhost:4201 ci:e2e",
     "ci": "run-s build:express ci:run"
   },
