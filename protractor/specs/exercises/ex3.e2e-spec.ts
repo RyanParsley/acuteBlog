@@ -3,7 +3,6 @@ import { browser, logging, ExpectedConditions } from 'protractor';
 
 describe('AcuteBlog App: Exercise 3', () => {
   // Define your signupPage
-  let signupPage: SignupPage;
 
   beforeEach(() => {
     // new instance of signupPage before each run
