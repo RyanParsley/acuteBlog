@@ -19,6 +19,5 @@ steps:
     npm install -g @angular/cli
     npm install
     npx webdriver-manager update
-    npx webdriver-manager start
     npm run ci
   displayName: 'npm install, build, run protractor'
