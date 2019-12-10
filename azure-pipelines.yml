@@ -34,7 +34,7 @@ steps:
   displayName: 'install the cli globally'
 - script: npx webdriver-manager update
   displayName: 'update webdriver-manager'
-- script: |
-    npm run build:express
-    npm run ci:run
-  displayName: 'build app and run protractor'
+- script: npm run build:express
+  displayName: 'build the app'
+- script: npm run ci:run
+  displayName: 'run protractor'
