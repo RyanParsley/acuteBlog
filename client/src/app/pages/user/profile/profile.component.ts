@@ -7,7 +7,7 @@ import { map, switchMap } from 'rxjs/operators';
 @Component({
   selector: 'app-profile',
   template: `
-    <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
       <h1>Welcome, {{ user.name }}</h1>
       <div fxFlex="20%">
         <img [src]="user.image" alt="Image of {{ user.name }}" />

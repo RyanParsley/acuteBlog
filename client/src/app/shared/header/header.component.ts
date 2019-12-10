@@ -57,7 +57,7 @@ interface NavItem {
             </ul>
           </div>
         </mat-toolbar>
-        <main>
+        <main class="container">
           <router-outlet></router-outlet>
         </main>
       </mat-sidenav-content>

@@ -34,15 +34,6 @@ import { Credentials } from '../../user/user';
         justify-content: center;
         margin: 72px 0;
       }
-      .mat-form-field {
-        width: 100%;
-        min-width: 300px;
-      }
-      mat-card-title,
-      mat-card-content {
-        display: flex;
-        justify-content: center;
-      }
       .loginError {
         padding: 16px;
         width: 300px;

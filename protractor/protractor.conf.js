@@ -19,6 +19,7 @@ exports.config = {
     ex3: './specs/exercises/ex3.e2e-spec.ts',
     ex4: './specs/exercises/ex4.e2e-spec.ts',
     ex5: './specs/exercises/ex5.e2e-spec.ts',
+    answer3: './specs/answers/ex3.e2e-spec.ts',
     exercises: './specs/exercises/*.ts',
     answers: './specs/answers/*.ts',
     anonymous: './specs/anonymous/*.ts',

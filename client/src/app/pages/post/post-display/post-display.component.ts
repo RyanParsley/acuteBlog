@@ -7,10 +7,8 @@ import { map, switchMap } from 'rxjs/operators';
 @Component({
   selector: 'app-post',
   template: `
-    <div class="container">
-      <h1>{{ post.title }}</h1>
-      <p>{{ post.body }}</p>
-    </div>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.body }}</p>
   `
 })
 export class PostDisplayComponent implements OnInit {
