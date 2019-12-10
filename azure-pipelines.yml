@@ -36,5 +36,5 @@ steps:
   displayName: 'update webdriver-manager'
 - script: npm run build:express
   displayName: 'build the app'
-- script: npm run ci:run
+- script: npm run ci:run:win
   displayName: 'run protractor'
