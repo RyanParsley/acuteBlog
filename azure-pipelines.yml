@@ -28,8 +28,8 @@ steps:
        npm
     path: $(npm_config_cache)
   displayName: Cache npm
-- script: npm ci
-  displayName: 'ci'
+- script: npm i
+  displayName: 'i'
 - script: npm install -g @angular/cli
   displayName: 'install the cli globally'
 - script: npx webdriver-manager update
