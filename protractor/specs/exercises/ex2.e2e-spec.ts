@@ -7,7 +7,7 @@ describe('AcuteBlog App: Exercise 2', () => {
   });
 
   it('has a user-list page that should not be accessible to anonymous users', () => {
-    // Make an assertion that the title of the user-list page is 'Users'
+    // Make an assertion that the title of the user-list page is not 'Users'
     // Hint: it's not the same page that we tested above
 
     // assert you do not visit /user without permission

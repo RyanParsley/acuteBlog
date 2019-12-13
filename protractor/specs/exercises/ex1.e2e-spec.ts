@@ -6,7 +6,6 @@ describe('AcuteBlog App: Exercise 1', () => {
     browser.get('http://localhost:4201');
 
     // Make an assertion that the title of the landing page is 'Acute Blog'
-    const title = element(by.css('#header-title'));
-    expect(title.getText()).toEqual('Acute Blog');
+    expect(true).toEqual(false);
   });
 });
