@@ -29,7 +29,7 @@ steps:
   displayName: 'i'
 - script: npm install -g @angular/cli
   displayName: 'install the cli globally'
-- script: npx webdriver-manager update --versions.chrome=80.0.3987
+- script: npx webdriver-manager update --versions.chrome=80.0.3987.106
   displayName: 'update webdriver-manager'
 - script: npm run build:express
   displayName: 'build the app'
