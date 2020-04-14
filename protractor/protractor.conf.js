@@ -4,7 +4,6 @@
 
 const { SpecReporter } = require('jasmine-spec-reporter');
 const tsConfig = require('./tsconfig.json');
-const puppeteer = require('puppeteer');
 
 /**
  * @type { import("protractor").Config }
@@ -34,8 +33,7 @@ exports.config = {
         '--no-sandbox',
         '--disable-gpu',
         '--window-size=1920,1080'
-      ],
-      binary: puppeteer.executablePath()
+      ]
     }
   },
   directConnect: true,
