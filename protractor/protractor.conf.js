@@ -3,8 +3,7 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 const { SpecReporter } = require('jasmine-spec-reporter');
-const tsConfig = require("./tsconfig.json");
-const puppeteer = require('puppeteer');
+const tsConfig = require('./tsconfig.json');
 
 /**
  * @type { import("protractor").Config }
@@ -28,13 +27,14 @@ exports.config = {
   },
   capabilities: {
     'browserName': 'chrome',
-    args: [
-      '--headless',
-      '--no-sandbox',
-      '--disable-gpu',
-      '--window-size=1920,1080'
-    ],
-    binary: puppeteer.executablePath()
+    chromeOptions: {
+      args: [
+        '--headless',
+        '--no-sandbox',
+        '--disable-gpu',
+        '--window-size=1920,1080'
+      ]
+    }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4201',
