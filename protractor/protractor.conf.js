@@ -26,7 +26,13 @@ exports.config = {
     authenticated: './specs/authenticated/*.ts'
   },
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+    args: [
+      '--headless',
+      '--no-sandbox',
+      '--disable-gpu',
+      '--window-size=1920,1080'
+    ]
   },
   directConnect: true,
   baseUrl: 'http://localhost:4201',
