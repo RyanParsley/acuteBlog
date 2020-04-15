@@ -9,7 +9,7 @@ import { Credentials } from '../../user/user';
     <mat-card>
       <mat-card-title>{{ title }}</mat-card-title>
       <mat-card-content>
-        <form id="authForm" [formGroup]="form" (ngSubmit)="submit(form.get('username').value)">
+        <form id="authForm" [formGroup]="form" (ngSubmit)="submit(payload)">
           <mat-form-field>
             <input name="username" type="text" matInput placeholder="Username" formControlName="username" />
           </mat-form-field>
@@ -57,7 +57,7 @@ export class LoginFormComponent {
   set pending(isPending: boolean) {
     isPending ? this.form.disable() : this.form.enable();
   }
-  @Input() submit!: () => void;
+  @Input() submit!: (payload: string) => void;
   @Input() errorMessage = '';
   @Input() submitText = 'Submit';
   @Input() title: string;
@@ -67,6 +67,8 @@ export class LoginFormComponent {
     username: new FormControl('someUser'),
     password: new FormControl('')
   });
+
+  payload = this.form.value.username || '';
 
   constructor(private router: Router) {
     this.title = 'Form Default Title';

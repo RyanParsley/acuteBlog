@@ -7,22 +7,22 @@ import { Routes } from '@angular/router';
 
 export const USER_ROUTES: Routes = [
   {
-    path: 'user',
+    path: '',
     component: UserListComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'user/:id',
+    path: ':id',
     component: ProfileComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'user/:id/edit',
+    path: ':id/edit',
     component: UserEditComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'user/new',
+    path: 'new',
     component: UserCreateComponent
   }
 ];

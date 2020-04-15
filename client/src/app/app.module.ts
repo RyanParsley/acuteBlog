@@ -8,15 +8,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CookieService } from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
-import { UserModule } from './pages/user/user.module';
-import { AuthModule } from './pages/auth/auth.module';
-import { PostModule } from './pages/post/post.module';
 import { MaterialModule } from './shared/material/material.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { NotFoundModule } from './pages/not-found/not-found.module';
+import { AuthModule } from './pages/auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, HeaderComponent],
@@ -26,12 +24,10 @@ import { NotFoundModule } from './pages/not-found/not-found.module';
     MaterialModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    UserModule,
-    AuthModule,
-    PostModule,
     FormsModule,
     FlexLayoutModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AuthModule,
     NotFoundModule
   ],
   providers: [CookieService],

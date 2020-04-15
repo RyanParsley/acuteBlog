@@ -23,7 +23,7 @@ describe('AcuteBlog App: Exercise 4', () => {
   it('should have a functioning login form', () => {
     login();
     const currentUser = browser.executeScript('return window.localStorage.getItem("currentUser");');
-    expect(currentUser).toEqual('foo');
+    expect(currentUser).toEqual('someUser');
   });
 
   it('should have a user-list page', () => {

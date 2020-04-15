@@ -7,20 +7,20 @@ import { Routes } from '@angular/router';
 
 export const POST_ROUTES: Routes = [
   {
-    path: 'post',
+    path: '',
     component: PostListComponent
   },
   {
-    path: 'post/new',
+    path: 'new',
     component: PostCreateComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'post/:id',
+    path: ':id',
     component: PostDisplayComponent
   },
   {
-    path: 'post/:id/edit',
+    path: ':id/edit',
     component: PostEditComponent,
     canActivate: [AuthGuard]
   }
