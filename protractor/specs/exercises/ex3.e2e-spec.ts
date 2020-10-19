@@ -9,8 +9,7 @@ describe('AcuteBlog App: Exercise 3', () => {
   });
 
   it('should have a signup page', () => {
-    // Make an assertion that the title of the login page is 'Welcome Back'
-    // Hint: it's not the same page that we tested above
+    // Make an assertion that the title of the signup page is 'Welcome to the party pal!'
   });
 
   it('should have a functioning signup form', () => {
